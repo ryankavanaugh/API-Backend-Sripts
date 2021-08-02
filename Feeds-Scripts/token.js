@@ -1,7 +1,7 @@
 require("dotenv").config({ path: __dirname + "/.env" });
 const appKEY = process.env["APP_KEY"];
 const secret = process.env["API_SECRET"];
-const StreamChat = require("stream-chat").StreamChat;
+const stream = require('getstream');
 
 const test = async () => {    
     const key = 'qaq9tzbfa59s'
@@ -9,8 +9,7 @@ const test = async () => {
     const appID = '100501'
     let stream = require('getstream');
     let client = stream.connect(key, Secret);
-    let token = client.createUserToken('ryan');
-    // const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoicnlhbiJ9.Va9Thg7gl4GtW3z1Q18FsHxYL7P0rAbXJtzpQTAr4KQ'
+    let token = client.createUserToken('seetha');
     return token
 
 }

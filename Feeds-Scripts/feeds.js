@@ -10,15 +10,15 @@ const addClientSide = async () => {
   console.log(client)
   const feed = client.feed('user', 'ryan', token)
   // console.log(feed)
-  // const activityfeed = {
-  //   'actor': client.currentUser,
-  //   'verb': 'post',
-  //   'object': 'Testing Feed',
-  //   'attachments': 'https://image.shutterstock.com/image-photo/portrait-tiger-black-background-600w-1543677188.jpg',
-  //   'time': '2020-11-21T20:30:45.123'
-  //   };
-  //   console.log(activityfeed)
-  // const addactivity = await feed.addActivity(activityfeed);
+  const activityfeed = {
+    'actor': client.currentUser,
+    'verb': 'post',
+    'object': 'Testing Feed',
+    'attachments': 'https://image.shutterstock.com/image-photo/portrait-tiger-black-background-600w-1543677188.jpg',
+    'time': '2020-11-21T20:30:45.123'
+    };
+    // console.log(activityfeed)
+  const addactivity = await feed.addActivity(activityfeed);
 
 
   // await client.setUser({
