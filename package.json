@@ -12,7 +12,8 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "getstream": "^7.2.5",
+    "json-2-csv": "^3.14.4",
     "nodemon": "^2.0.6",
-    "stream-chat": "^3.9.0"
+    "stream-chat": "^4.2.0"
   }
 }

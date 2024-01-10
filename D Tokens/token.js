@@ -4,6 +4,7 @@ const secret = process.env["API_SECRET"];
 const StreamChat = require("stream-chat").StreamChat;
 // const StreamChat = require("stream-chat").StreamChat;
 
+
 // const test = async () => {
 //     const chatClient = new StreamChat(appKEY, secret);
 //     const userID = "ryan";
@@ -23,9 +24,13 @@ const StreamChat = require("stream-chat").StreamChat;
 // const secrett = '7prc9kpqh42tygjf7cjyb8pcdtzhktvhrqrawxn8kdmqmnbcjpztsbqv5twshu55';
 
 
-const key = 'qaq9tzbfa59s'
-const secrett = '87hpnuzt45t9bac2t73u2thk2h8dzdt9w6tcyp7bzth9h5t7qnm6damrg97tfnnj'
+// const key = 'qaq9tzbfa59s'
+// const secrett = '87hpnuzt45t9bac2t73u2thk2h8dzdt9w6tcyp7bzth9h5t7qnm6damrg97tfnnj'
    
+
+const key = "ugach8ncqzkq";
+const secrett = "kgtvg5fzrqefug6f7ejxxbtnptajgxzvmg9vz96t4e4ts385q4cy36jn2zfu9byw";
+
 
 const test = async () => {
     // const userID = "STA_58";
@@ -34,6 +39,9 @@ const test = async () => {
     // const client = new StreamChat(appKEY, secret);
     const client = new StreamChat(key, secrett);
     const token = client.createToken(userID);
+
+
+    
     return token
 }
 
@@ -49,3 +57,8 @@ const test = async () => {
 // }
 
 test().then((r) => console.log(r));
+
+
+
+
+

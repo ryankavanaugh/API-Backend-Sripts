@@ -39,5 +39,13 @@ const test = async () => {
     return channels
 }
 
+const filter = { type: 'messaging'};
+const sort = [];
+const channels = await client.queryChannels(filter, sort, {
+  watch: false,
+  state: true,
+});  
+return res.json(channels)
+
 test().then((r) => console.log(r));
 

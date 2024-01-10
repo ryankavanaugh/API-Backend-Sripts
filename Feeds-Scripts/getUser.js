@@ -3,7 +3,6 @@ const appKEY = process.env["APP_KEY"];
 const secret = process.env["API_SECRET"];
 // const StreamChat = require("stream-chat").StreamChat;
 
-
 const test = async () => {    
     // Variables
     const key = 'qaq9tzbfa59s'

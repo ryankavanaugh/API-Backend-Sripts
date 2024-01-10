@@ -5,13 +5,13 @@ const StreamChat = require("stream-chat").StreamChat;
 
 const test = async () => {
     const chatClient = new StreamChat(key, secret);
-    const userName = "Ryan";
+    const userName = "Cody";
     const userID = userName;
     // const token = chatClient.createToken(userID);
     const token = chatClient.createToken(userID);
     console.log(token)
     // server to client side code
-    const user = await chatClient.connectUser({id: userID, name: userName}, token);      
+    const user = await chatClient.connectUser({id: userID, name: userName }, token);      
     return [user, token]
 }
 

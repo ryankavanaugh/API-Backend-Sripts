@@ -6,7 +6,6 @@ const StreamChat = require("stream-chat").StreamChat;
 const appKEY = 'qaq9tzbfa59s'
 const secret = '87hpnuzt45t9bac2t73u2thk2h8dzdt9w6tcyp7bzth9h5t7qnm6damrg97tfnnj'
  
-
 const test = async () => {
     // chat client
     const chatClient = new StreamChat(appKEY, secret);
@@ -15,9 +14,9 @@ const test = async () => {
     // token
     const token = chatClient.createToken(userID);
     // server to client side code
-    const set = await chatClient.setUser({id: userID}, token);
+    const set = await chatClient.connectUser({id: userID}, token);
     // console.log(chatClient.tokenManager);
-    const channel = chatClient.channel('messaging', 'PineApplez', {
+    const channel = chatClient.channel('messaging', 'G', {
     });
 
     await channel.watch();
@@ -26,7 +25,7 @@ const test = async () => {
         console.log('event', event);
         console.log('channel.state', channel.state);
     });
-    return channel;
+    // return channel.state.read.ryan.last_read
 }
 
 test().then((r) => console.log(r));

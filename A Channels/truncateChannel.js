@@ -11,7 +11,18 @@ const test = async () => {
     const set = await chatClient.setUser({id: userID}, token);
     // console.log(chatClient.tokenManager);
     const channelName = process.argv[2];
-    const channel = chatClient.channel('messaging', channelName, {});
+    
+
+    const filter = { cid: "messaging:F"};
+    const sort = { last_message_at: -1 };
+    const channel = await chatClient.queryChannels(filter, sort, {
+        // watch: true,
+        // state: true,
+    });
+
+    chan = client.channel(filter);
+    chan.truncate();
+    return chan;
     await channel.create();
     await channel.truncate();
     return channel;              

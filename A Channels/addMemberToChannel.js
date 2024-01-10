@@ -18,13 +18,13 @@ const test = async () => {
 
     const set = await chatClient.connectUser({id: userID}, token);
 
-    const channel = chatClient.channel('messaging', 'PineApplez', { 
+    const channel = chatClient.channel('messaging', '!members-itSqRJApHu8rPEBc_EKEPucmQZY_VCutAY_tNkzWX5w', { 
         // name: 'Oranges', 
         // members: ['ryan'],
         // names: 'purple' 
     }); 
     // await channel.create();
-    response = await channel.addMembers(['jacko']); 
+    response = await channel.addMembers(['ryan']); 
 
       
     return response

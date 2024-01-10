@@ -1,27 +1,23 @@
-require("dotenv").config({ path: __dirname + "/.env" });
-const appKEY = process.env["APP_KEY"];
-const secret = process.env["API_SECRET"];
+// require("dotenv").config({ path: __dirname + "/.env" });
 const StreamChat = require("stream-chat").StreamChat;
-
-// const appKEY = 'qaq9tzbfa59s'
-// const secret = '87hpnuzt45t9bac2t73u2thk2h8dzdt9w6tcyp7bzth9h5t7qnm6damrg97tfnnj'
+const api_key = 'qaq9tzbfa59s'
+const api_secret = '87hpnuzt45t9bac2t73u2thk2h8dzdt9w6tcyp7bzth9h5t7qnm6damrg97tfnnj'
 
 const test = async () => {
-    const chatClient = new StreamChat(appKEY, secret);
+    const chatClient = new StreamChat.getInstance(api_key, api_secret);
     const userID = "ryan";
     const token = chatClient.createToken(userID);
+
     // server to client side code
     const set = await chatClient.connectUser({id: userID}, token);
-    // console.log(chatClient.tokenManager);
-    const channel = chatClient.channel('messaging', 'F', {});
+    const channel = chatClient.channel('messaging', 'ZZ', {});
     // await channel.create();
-    const message = await channel.sendMessage(
+    const sentMessage = await channel.sendMessage(
         {
-            text:  '“a \t\n\n b \t\n\n c”',
-            animal: "sea lion"
+            text:  'test message text',
         },
-    )
-    return message;              
+        )
+        console.log(sentMessage)
 }
 
 test().then((r) => console.log(r));

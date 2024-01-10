@@ -52,8 +52,9 @@ const test = async () => {
         members: ['tyler', 'ryan', 'mike', 'stacy']
     },
 );
+
     // return channel.data;    
-    return null          
+    return partialUpdate          
 }
 
 test().then((r) => console.log(r));

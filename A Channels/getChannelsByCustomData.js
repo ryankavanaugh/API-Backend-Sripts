@@ -14,13 +14,12 @@ const test = async () => {
     userID1 = 'tyler';
     userID2 = 'ryan';
      
-    const custom_data_filter = {  type: "messaging" , color: 'purple'}; 
-  
+    // const custom_data_filter = {  type: "messaging" , color: 'purple'}; 
+    // const sort = { color: -1 };
+    const custom_data_filter = {  type: "messaging"}; 
     const sort = { last_message_at: -1 };
-    const channels = await chatClient.queryChannels(custom_data_filter, sort, {
-        // watch: true,
-        // state: true,
-    });
+    const channels = await chatClient.queryChannels(custom_data_filter, sort);
+    return channels.length
     return channels[0].state.messages;
 }
 

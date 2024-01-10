@@ -3,7 +3,6 @@ const appKEY = process.env["APP_KEY"];
 const secret = process.env["API_SECRET"];
 // const StreamChat = require("stream-chat").StreamChat;
 
-
 const test = async () => {    
     // Variables
     const key = 'qaq9tzbfa59s'
@@ -34,20 +33,28 @@ const test = async () => {
     // const post = feed.addActivity(activity);
     // return post
     let posts = feed.get({ limit: 5, offset: 0 });
-    return posts
+    // return posts
     activityId = '34f27248-ca1b-11eb-bf28-1254437355c5';
     const like = client.reactions.add("like", activityId); 
-    // const likeID = like;
-    // return likeID
+    const likeID = like;
+    // return (await likeID).id
     reactionId = '9e89a656-71cf-44f1-a93f-d77d40420382';
 
-    const response = await client.reactions.filter({ 
+    const activityReactions = await client.reactions.filter({ 
         'activity_id': activityId, 
-        'kind': 'like', 
-        // 'user_id': 'adam' 
+        // 'kind': 'comment', 
       });
+      return commentResponse
+    const childReaction = client.reactions.add('like', (await likeID).id)
+    const res = feed.get({
+      limit: 1,
+      reactions: { own:true, recent:true, counts:true}
+    })
+    return childReaction
 
-      return response
+      // return res
+    
+    return childReaction
 }
 
 test().then((r) => console.log(r));
