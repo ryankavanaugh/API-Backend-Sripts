@@ -18,24 +18,24 @@ const test = async () => {
 
     // set all demo messages
     const M1 = {
-        text: "Hey!! Can anyone watch my dog this weekend?", 
+        text: "Hey!! Does anyone want to go to Spain this weekend?", 
         user_id: userID1
     }
     const M2 = {
-            text: "Hi Gwen, let me check my schedule",
+            text: "Hi Gwen, let me check my schedule :)",
             user_id: userID3,
     }
     const M3 =      {
-        text: "I can watch your pup!", 
-        user_id: userID3
+        text: "Yes! Let's go", 
+        user_id: userID4
     }
     const M4 =      {
-        text: "Nice :) Also, don't forget our neighborhoood picnic next week!!", 
+        text: "Nice :) Let's start looking into restaurants and accomodations!!", 
         user_id: userID1
     }
     const M5 = {
-        text: "Thanks! Appreciate it. I'll definitely come next week 😊  ",
-        user_id: userID1,
+        text: "Yea! I'll definitely come ",
+        user_id: userID2,
 }
 
 const M6 = {

@@ -26,25 +26,21 @@ function runScript(scriptPath, callback) {
 
 // Now we can run a script and invoke a callback when complete, e.g.
 
-runScript('./SocialMsgScriptND.js', function (err) {
+runScript('./MarketplaceAnnouncements.js', function (err) {
     if (err) throw err;
     console.log('finished running some-script.js');
 });
 
-runScript('./SocialMsgScriptGroupChat.js', function (err) {
+runScript('./Landscaping.js', function (err) {
     if (err) throw err;
     console.log('finished running some-script.js');
 });
 
-runScript('./SocialMsgScriptGwen.js', function (err) {
+runScript('./Handyman.js', function (err) {
     if (err) throw err;
     console.log('finished running some-script.js');
 });
 
-runScript('./AI.js', function (err) {
-    if (err) throw err;
-    console.log('finished running some-script.js');
-});
 
 
 

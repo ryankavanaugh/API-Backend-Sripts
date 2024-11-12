@@ -1,49 +1,21 @@
 require("dotenv").config({ path: __dirname + "/.env" });
-const appKEY = process.env["APP_KEY"];
+const key = process.env["APP_KEY"];
 const secret = process.env["API_SECRET"];
 const StreamChat = require("stream-chat").StreamChat;
-// const StreamChat = require("stream-chat").StreamChat;
-
-
-// const test = async () => {
-//     const chatClient = new StreamChat(appKEY, secret);
-//     const userID = "ryan";
-//     // const token = chatClient.createToken(userID);
-//     // // servers side code
-//     // const set = await chatClient.connectUser({id: userID}, token);
-//     const client = new StreamChat('qnudtemn5mzc', 'qwwxmctyeubnqanh6ve6ew5ab8n63a4v2ksax585rjsy3z8c2ynjmj5jymc9hh6p');
-//     const token = client.createToken('ryan');
-//     return token
-// }
-
-// CHAT VS FEEDS TOKENS
-// Chat Token
-
-// customer data
-// const key = '2ken74hah2xb';
-// const secrett = '7prc9kpqh42tygjf7cjyb8pcdtzhktvhrqrawxn8kdmqmnbcjpztsbqv5twshu55';
-
-
-// const key = 'qaq9tzbfa59s'
-// const secrett = '87hpnuzt45t9bac2t73u2thk2h8dzdt9w6tcyp7bzth9h5t7qnm6damrg97tfnnj'
-   
-
-const key = "ugach8ncqzkq";
-const secrett = "kgtvg5fzrqefug6f7ejxxbtnptajgxzvmg9vz96t4e4ts385q4cy36jn2zfu9byw";
 
 
 const test = async () => {
-    // const userID = "STA_58";
-    const userID = "tyler";
-    // const userID = userID;
-    // const client = new StreamChat(appKEY, secret);
-    const client = new StreamChat(key, secrett);
+    const userID = "UserExampleID";
+    const client = new StreamClient(key, secret);
     const token = client.createToken(userID);
-
-
-    
     return token
 }
+
+test().then((r) => console.log(r));
+
+// const key = "nvp9bux7jbb8";
+// const secrett = "4srf6hpg2q8udqssevzekb6b8fq5a9ahtyxdm3b5bsktb4hpe479j6cfwjggx96m";
+
 
 // // Feed Token
 // const test = async () => {    
@@ -55,8 +27,6 @@ const test = async () => {
 //     let token = client.createUserToken('ryan');
 //     return token
 // }
-
-test().then((r) => console.log(r));
 
 
 

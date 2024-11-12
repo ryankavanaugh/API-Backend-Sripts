@@ -12,12 +12,16 @@ const test = async () => {
     const set = await chatClient.connectUser({id: userID}, token);
     const channel = chatClient.channel('messaging', 'ZZ', {});
     // await channel.create();
+
+    try {
     const sentMessage = await channel.sendMessage(
         {
             text:  'test message text',
         },
         )
         console.log(sentMessage)
-}
-
+    } catch (error) {
+        console.log(error);
+        }
+    }
 test().then((r) => console.log(r));

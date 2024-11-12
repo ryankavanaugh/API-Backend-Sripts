@@ -26,18 +26,18 @@ const test = async () => {
         ],
         user_id: userID1
     }
-//     const M2 = {
-//             text: "Hi Gwen, good. Just working on some projects",
-//             user_id: userID2,
-//     }
-//     const M3 =      {
-//         text: "Oh nice! What are these mysterious projects? ;)", 
-//         user_id: userID1
-//     }
-//     const M4 =      {
-//         text: "You'll have to wait and see :)", 
-//         user_id: userID2
-//     }
+    const M2 = {
+            text: "Hi, welcome to your AI Assitant powered by Chat GPT. How can I help you?",
+            user_id: userID1,
+    }
+    const M3 =      {
+        text: "Hey! ",
+        user_id: userID1
+    }
+    const M4 =      {
+        text: "How's your day going so far :)", 
+        user_id: userID1
+    }
 //     const M5 = {
 //         text: "Okay :) Any recent favorite fashion bloggers?",
 //         user_id: userID1,
@@ -66,13 +66,13 @@ const test = async () => {
 
 
     // save messages in array for map function
-    const allMessages = [M1]
+    // const allMessages = [M1]
     // const allMessages = [M1, M2, M3, M4]
 
-    const SM1 = await channel.sendMessage(M1)
+    // const SM1 = await channel.sendMessage(M1)
     // const SM2 = await channel.sendMessage(M2)
-    // const SM3 = await channel.sendMessage(M3)
-    // const SM4 = await channel.sendMessage(M4)
+    const SM3 = await channel.sendMessage(M3)
+    const SM4 = await channel.sendMessage(M4)
     // const SM5 = await channel.sendMessage(M5)
 
     // send all messages

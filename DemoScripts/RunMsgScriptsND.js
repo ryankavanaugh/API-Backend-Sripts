@@ -41,10 +41,6 @@ runScript('./SocialMsgScriptGwen.js', function (err) {
     console.log('finished running some-script.js');
 });
 
-runScript('./AI.js', function (err) {
-    if (err) throw err;
-    console.log('finished running some-script.js');
-});
 
 
 

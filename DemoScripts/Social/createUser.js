@@ -15,15 +15,17 @@ const nd = "https://play-lh.googleusercontent.com/RamdLkcf8OZ7y2DEpajvoLntyHr0v8
 
 const cup = "https://images.unsplash.com/photo-1506619216599-9d16d0903dfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGNvZmZlZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60"
 
+const tripAdvisor = "https://www.google.com/url?sa=i&url=https%3A%2F%2Ftechnext24.com%2F2022%2F07%2F06%2Ftrip-advisor-app-travel-guide-and-sum%2F&psig=AOvVaw17qW7ivhShEY6wW_8YWIW8&ust=1721404708400000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCIjdxsr6sIcDFQAAAAAdAAAAABAE"
+
 const test = async () => {
     const chatClient = new StreamChat(Dkey, Dsecret);
-    const userID = "CompanyAdmin";
+    const userID = "AI";
     const token = chatClient.createToken(userID);
     const createUser = await chatClient.connectUser(
         {
             id: userID,
             name: userID,
-            image: cup,
+            image: tripAdvisor,
         }, 
         token);
         return token

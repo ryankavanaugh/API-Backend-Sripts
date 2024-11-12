@@ -6,7 +6,7 @@ Dsecret = '4srf6hpg2q8udqssevzekb6b8fq5a9ahtyxdm3b5bsktb4hpe479j6cfwjggx96m'
 
 const test = async () => {
     const chatClient = new StreamChat(Dkey, Dsecret);
-    const channel = chatClient.channel('livestream', 'room-esg', {});
+    const channel = chatClient.channel('livestream', 'global-ve2', {});
 
     // clear any SE inputed messages for next demo run
     await channel.truncate();
@@ -17,24 +17,24 @@ const test = async () => {
 
     // set all demo messages
     const M1 = {
-        text: "Hey!! Great Livestream. Will there be a Q & A section?", 
+        text: "Hey! Great Livestream. I wonder who will move onto the next round 🤔 Maybe Shelby", 
         user_id: userID1
     }
     const M2 = {
-            text: "Hi Gwen, looks like it!",
+            text: "Hi Leo, looks like it!",
             user_id: userID3,
     }
     const M3 =      {
-        text: "This game is great!", 
+        text: "This show is great!!", 
         user_id: userID2
     }
     const M4 =      {
-        text: "Nice :) Also, don't forget our community Discord Channel!!", 
+        text: "Nice :) Also, don't forget our community Channel!!", 
         user_id: userID1
     }
     const M5 = {
-        text: "Thanks! Appreciate it. I'll definitely join shortly 😊  ",
-        user_id: userID1,
+        text: "Thanks! Appreciate it. I'll definitely join 😊  ",
+        user_id: userID2,
 }
 
 const M6 = {
@@ -43,12 +43,12 @@ const M6 = {
 }
 
 const M7 = {
-    text: "This livestream is so fast! (The average API resopnse time is ~ 9ms)",
+    text: "This livestream chat is so fast! (The average API resopnse time is ~ 9ms)",
     user_id: userID1,
 }
 
 const M8 = {
-    text: "This is my favorite Streamer!! She is so funny",
+    text: "This is my favorite host!! She is so funny",
     user_id: userID2,
 }
 
@@ -63,7 +63,7 @@ const M10 = {
 }
 
 const M11 = {
-    text: "What's up!!",
+    text: "Great performance!",
     user_id: userID2,
 }
 

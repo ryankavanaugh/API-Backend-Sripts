@@ -1,34 +1,40 @@
 require("dotenv").config({ path: __dirname + "/.env" });
 
 
-const addClientSide = async () => {
+
+const fetchActivity = async () => {
   const stream = require("getstream");
   // prod v2
-  const key = 'b5s6vh973ku3'
-  const secret = 'ckpmdnndqdxevzzrpra8amh283ff98ph4vbp6vsdnz8v4s94wshg9yttxv8bbxn5'
+  const key = '7q7ejzbbmrhg'
+  const secret = '4rxgpuvhafy8yms56xncx2yzgq5b5w8n7rwepthpzr79cv9rfe6vn2rcvs6u3zy3'
   // const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidW5kZWZpbmVkIn0.Pw_RkXrzD7zXqsYixYYkQ7LqCefmvyyWRGm_3gsuSQ4'
-  const appID = '100501'
+
   const client = stream.connect(key, secret)
 
-  feedName = 'department:ECTP'
+  feedName = 'd3fd81520d0d779caa8dbe26699fe001282513cd31ca4d9d832c4451b62758c8'
+  activityID = "71214530-71e5-11ef-8080-800147bd7b19"
 
-  const response = client.getActivities(  {  ids: [ 
-    feedName,
-]});
+const reactions = await client.reactions.filter({
+  'activity_id': activityID
+});
 
-  // await client.setUser({
-  //   name: "ryan"
-  // })
+return reactions
 
-  // await feed1.addActivity(activity);
-  // activity.time = Date.now();
-  // return await client.updateActivities([activity]);
-  // return await feed1.unsubscribe;
+  feedID = "d3fd81520d0d779caa8dbe26699fe001282513cd31ca4d9d832c4451b62758c8"
+
+  const feed = client.feed('Company_News', feedID);
+
+
+
+  jsonData = feed.get({ limit:100, offset:0, reactions: {own: true, counts: true, recent: true}, })
+  .then(console.log("yes"))
+  .catch(error => console.error('Error:', error));;
+
+  // const jsonData2 = JSON.parse(jsonData);
+return jsonData
+
+
+;
 
 };
-addClientSide().then((r) => console.log(r));
-
-
-
-// stephen code vid
-// const feed1 = await client.feed("timeline", userID);
+fetchActivity().then((r) => console.log(r));

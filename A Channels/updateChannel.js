@@ -15,11 +15,12 @@ const StreamChat = require("stream-chat").StreamChat;
 
 const test = async () => {
 
-    const key = 'qaq9tzbfa59s'
-    const secret = '87hpnuzt45t9bac2t73u2thk2h8dzdt9w6tcyp7bzth9h5t7qnm6damrg97tfnnj'
+    const appKEY = 'wgut7u2abfdw'
+    const secret = 'yahkfcjf28v5knkhnjemz9ta7tf5wz5p9d8msas27akzdt32g3dkkybcf29u5gna'
+     
     const chatClient = new StreamChat(key, secret);
 
-    const userID = "tyler";
+    const userID = "ryan";
 
     // const updatez = {
     //     id: userID,
@@ -49,7 +50,8 @@ const test = async () => {
     const update = await channel.update(
         {
         name: 'Example› Chat',
-        members: ['tyler', 'ryan', 'mike', 'stacy']
+        members: ['ryan', 'd'],
+        team: 'blue'
     },
 );
 

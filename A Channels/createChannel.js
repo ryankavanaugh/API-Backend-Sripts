@@ -1,10 +1,9 @@
 require("dotenv").config({ path: __dirname + "/.env" });
-// const appKEY = process.env["APP_KEY"];
-// const secret = process.env["API_SECRET"];
 const StreamChat = require("stream-chat").StreamChat;
 
-const appKEY = 'qaq9tzbfa59s'
-const secret = '87hpnuzt45t9bac2t73u2thk2h8dzdt9w6tcyp7bzth9h5t7qnm6damrg97tfnnj'
+
+const appKEY = 'wgut7u2abfdw'
+const secret = 'yahkfcjf28v5knkhnjemz9ta7tf5wz5p9d8msas27akzdt32g3dkkybcf29u5gna'
  
 const test = async () => {
     const chatClient = new StreamChat(appKEY, secret);
@@ -13,24 +12,31 @@ const test = async () => {
     const token = chatClient.createToken(userID);
     const set = await chatClient.connectUser({id: userID}, token);
 
-    const channel = chatClient.channel('messaging',  { 
-        name: 'ZZ', 
-        members: ['ryan', 'george']
+    const createUser = await chatClient.connectUser(
+        {
+            id: userID,
+            name: userID,
+        }, 
+        token);
+
+
+
+    const channel = chatClient.channel('messaging', 'test2',  { 
+        name: 'ChangeTeam', 
+        members: ['ryan', 'd'],
+        team: 'red'
     }); 
      
     await channel.create();  
-    // const channel = chatClient.channel('messaging', 'ZZ', {});
-    // // await channel.create();
-    const sentMessage = await channel.sendMessage(
+
+    const update = await channel.update(
         {
-            text:  'cake',
-            animal: "sea turtle",
-            trell: [
-                {"url":"xx"}
-            ]
-        },
-        )
-    return channel.id
+        name: 'test2',
+        members: ['ryan', 'd'],
+        team: 'blue'
+    },
+);
+
 }
 
 test().then((r) => console.log(r));

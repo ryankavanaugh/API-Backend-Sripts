@@ -1,12 +1,15 @@
-require("dotenv").config({ path: __dirname + "/.env" });
+
+
+const key = "xfyrhz6nwwxz";
+const secret = "dmpt85ud2kfejnb9ymrwmfeya7ev43y29wcg2fa3vqca8mgs7xu66nsbmszmrkqk";
+const userID = "Steve";
+
 const StreamChat = require("stream-chat").StreamChat;
 
-const key = "ugach8ncqzkq";
-const secret = "kgtvg5fzrqefug6f7ejxxbtnptajgxzvmg9vz96t4e4ts385q4cy36jn2zfu9byw";
-const userID = "ryan";
 
 const test = async () => {
-    const client = new StreamChat(key, secret);
+    const userID = "Steve";
+    const client = new StreamClient(key, secret);
     const token = client.createToken(userID);
     return token
 }

@@ -1,6 +1,8 @@
 const StreamChat = require("stream-chat").StreamChat;
-Dkey = 'mxbvq7uep5pn'
-Dsecret = 'srwn8j9hcyeexbhk9xyu6f27j5vwrw6fdzf5z9acuwx94rmq87etfrbfzuavj73e'
+
+Dkey = 'sbpa4hs6h67q'
+Dsecret = 'td96qy4ngfqj82zcbb6hmr2rx7yszjnypbsd9pnszgdhdkwnsq6yxnne64ngr3uu'
+
 
 image = "https://d3jycsk0m72ya7.cloudfront.net/images/2022/8/12/Jensen_Jake.JPG?width=146"
 
@@ -13,7 +15,7 @@ const test = async () => {
 
     const channel = chatClient.channel('messaging', 'HunterChan1',  { 
         name: 'Dave',
-        members: ['Dave', 'AJ'],
+        members: ['Dave', 'Hunter'],
         image: image,
     }); 
      
